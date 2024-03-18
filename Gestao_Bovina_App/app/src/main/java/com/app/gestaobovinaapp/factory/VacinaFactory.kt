@@ -1,6 +1,6 @@
 package com.app.gestaobovinaapp.factory
 
-interface BovinoFactory {
+interface VacinaFactory {
     fun criarTabela() : String
-    fun adicionarBovino() : Long
+    fun adicionarVacina() : String
 }
