@@ -26,6 +26,11 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         })
 
+        binding.textVerHistoricoVida.setOnClickListener({
+            val intent = Intent(this, HistoricoVidaActivity::class.java)
+            startActivity(intent)
+        })
+
         binding.textVerHistoricoVacinas.setOnClickListener({
             val intent = Intent(this, HistoricoVacinasActivity::class.java)
             startActivity(intent)

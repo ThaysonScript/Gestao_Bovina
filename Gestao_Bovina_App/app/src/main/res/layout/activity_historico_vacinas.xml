@@ -37,8 +37,7 @@
         android:layout_weight="1"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:clipToPadding="false"
-        android:background="@drawable/rounded_corners_background" />
+        android:clipToPadding="false"/>
 
     <!-- Ícone de Carregamento (Oculto por padrão, visível durante o carregamento) -->
     <ProgressBar

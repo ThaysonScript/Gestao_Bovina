@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.gestaobovinaapp.database.BancoDados
 import com.app.gestaobovinaapp.databinding.ActivityCadastrarVacinasBinding
+import com.app.gestaobovinaapp.factory.VacinaFactoryImpl
 
 class CadastrarVacinasActivity : AppCompatActivity() {
 
@@ -21,12 +22,17 @@ class CadastrarVacinasActivity : AppCompatActivity() {
         binding.buttonSubmit.setOnClickListener {
             val nomeVacina = binding.editVaccineName.text.toString()
             val numeroAnimal = binding.editAnimalNumber.text.toString()
-            val dataAdmin = binding.editDateAdministered.text.toString()
-            val notas = binding.editNotes.text.toString()
+            // val dataAdmin = binding.editDateAdministered.text.toString()
+            val dataAdmin = 7.8
+            //val notas = binding.editNotes.text.toString()
+            //val notas = 12.3
 
-            if (nomeVacina.isNotEmpty() && numeroAnimal.isNotEmpty() && dataAdmin.isNotEmpty()) {
-                val id = db.inserirVacina(nomeVacina, numeroAnimal, dataAdmin, notas)
-                if (id != -1L) {
+            val db = BancoDados(this)
+            val vacina = VacinaFactoryImpl(db)
+
+            if (nomeVacina.isNotEmpty() && numeroAnimal.isNotEmpty()) {
+                val id = vacina.adicionarVacina(nomeVacina, numeroAnimal, dataAdmin)
+                if (id != null) {
                     Toast.makeText(this, "Vacina registrada com sucesso!", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this, "Erro ao registrar vacina", Toast.LENGTH_SHORT).show()
