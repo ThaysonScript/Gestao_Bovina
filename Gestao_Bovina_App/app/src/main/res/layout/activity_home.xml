@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white"
+tools:context=".views.HomeActivity">
+
+<GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="bottom">
+
+    <LinearLayout
+        android:id="@+id/layout_cards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/layout_card1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/text_cadastrar_animal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:width="150dp"
+                android:height="150dp"
+                android:gravity="center"
+                android:text="Cadastar Novo Animal"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/text_ver_historico_vida"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:width="150dp"
+                android:height="150dp"
+                android:gravity="center"
+                android:text="Ver Histórico de vida"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_card2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="0dp">
+
+            <TextView
+                android:id="@+id/text_cadastrar_vacinas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:width="150dp"
+                android:height="150dp"
+                android:gravity="center"
+                android:text="Cadastrar Vacinas"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/text_ver_historico_vacinas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:width="150dp"
+                android:height="150dp"
+                android:gravity="center"
+                android:text="Ver Histórico de Vacinas"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</GridLayout>
+</RelativeLayout>

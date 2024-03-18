@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="16dp"
+android:background="@android:color/white"
+tools:context=".views.CadastrarVacinasActivity">
+
+<!-- Título da página -->
+<TextView
+    android:id="@+id/text_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Cadastrar Vacina do Bovino"
+    android:textSize="30sp"
+    android:textStyle="bold"
+    android:textColor="@android:color/black"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="32dp"/>
+
+<!-- Campos de entrada -->
+<EditText
+    android:id="@+id/edit_vaccine_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Nome da Vacina"
+    android:textColorHint="@color/black"
+    android:textColor="@color/black"
+    android:backgroundTint="@color/black"
+    android:layout_below="@id/text_title"
+    android:layout_marginTop="16dp"/>
+
+<EditText
+    android:id="@+id/edit_animal_number"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Número do Animal"
+    android:textColorHint="@color/black"
+    android:textColor="@color/black"
+    android:backgroundTint="@color/black"
+    android:layout_below="@id/edit_vaccine_name"
+    android:layout_marginTop="16dp"/>
+
+<EditText
+    android:id="@+id/edit_date_administered"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Data de Administração"
+    android:textColor="@color/black"
+    android:textColorHint="@color/black"
+    android:backgroundTint="@color/black"
+    android:layout_below="@id/edit_animal_number"
+    android:layout_marginTop="16dp"/>
+
+<EditText
+    android:id="@+id/edit_notes"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Notas Adicionais"
+    android:textColorHint="@color/black"
+    android:textColor="@color/black"
+    android:backgroundTint="@color/black"
+    android:layout_below="@id/edit_date_administered"
+    android:layout_marginTop="16dp"/>
+
+<!-- Botão de submissão -->
+<Button
+    android:id="@+id/button_submit"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Submeter"
+    android:textColor="@android:color/white"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:backgroundTint="#1e191c"
+    android:layout_below="@id/edit_notes"
+    android:layout_marginTop="32dp"/>
+
+</RelativeLayout>
