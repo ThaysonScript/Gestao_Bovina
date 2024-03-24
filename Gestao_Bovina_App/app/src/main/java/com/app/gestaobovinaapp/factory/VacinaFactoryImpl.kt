@@ -31,7 +31,7 @@ class VacinaFactoryImpl(private val bancoDados: BancoDados) : VacinaFactory {
         db.close()
     }
 
-    public fun getTabela() : String {
+    fun getTabela() : String {
         return this.TABELA_VACINA
     }
 }

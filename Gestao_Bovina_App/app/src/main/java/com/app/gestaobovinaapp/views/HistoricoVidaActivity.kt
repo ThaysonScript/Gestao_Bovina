@@ -17,20 +17,5 @@ class HistoricoVidaActivity : AppCompatActivity() {
         binding = ActivityHistoricoVidaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        try {
-            val db = BancoDados(this)
-            val bovinoFactory = BovinoFactoryImpl(db)
-            val dadosBovinos = bovinoFactory.obterTodosBovinos()
-
-
-            val dadosFormatados = dadosBovinos.joinToString(separator = "\n")
-            binding.textViewDadosBovinos.text = "Dados dos Bovinos:\n\n$dadosFormatados"
-        } catch (e: Exception) {
-            Log.e(TAG, "Exception in HistoricoVidaActivity", e)
-        }
-    }
-
-    companion object {
-        private const val TAG = "HistoricoVidaActivity"
     }
 }

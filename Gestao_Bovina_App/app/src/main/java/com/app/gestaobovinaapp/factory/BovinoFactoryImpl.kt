@@ -2,6 +2,7 @@ package com.app.gestaobovinaapp.factory
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
+import android.database.Cursor
 import com.app.gestaobovinaapp.database.BancoDados
 import com.app.gestaobovinaapp.model.Bovino
 
@@ -37,29 +38,8 @@ class BovinoFactoryImpl(private val bancoDados: BancoDados) : BovinoFactory {
         db.close()
     }
 
-    @SuppressLint("Range")
-    fun obterTodosBovinos(): List<Bovino> {
-        val bovinos = mutableListOf<Bovino>()
-        val db = bancoDados.readableDatabase
-        val cursor = db.rawQuery("SELECT * FROM ${TABELA_BOVINOS}", null)
+    fun obterTodosBovinos() {
 
-        try {
-            if (cursor.moveToFirst()) {
-                do {
-                    val id = cursor.getLong(cursor.getColumnIndex("id"))
-                    val nome = cursor.getString(cursor.getColumnIndex(COLUNA_NOME))
-                    val dataComprado = cursor.getString(cursor.getColumnIndex(COLUNA_DATA_COMPRADO))
-                    val precoCompra = cursor.getDouble(cursor.getColumnIndex(COLUNA_PRECO_COMPRA))
-                    val pesoAtual = cursor.getDouble(cursor.getColumnIndex(COLUNA_PESO_ATUAL))
-
-                    val bovino = Bovino(id, nome, dataComprado, precoCompra, pesoAtual)
-                    bovinos.add(bovino)
-                } while (cursor.moveToNext())
-            }
-        } finally {
-            cursor.close()
-        }
-        return bovinos
     }
 
 
