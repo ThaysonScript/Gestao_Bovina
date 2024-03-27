@@ -3,15 +3,16 @@ package com.app.gestaobovinaapp.views
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.app.gestaobovinaapp.database.BancoDados
+import com.app.gestaobovinaapp.database.CriarBancoDados
 import com.app.gestaobovinaapp.databinding.ActivityCadastrarAnimaisBinding
-import com.app.gestaobovinaapp.factory.BovinoFactoryImpl
+import com.app.gestaobovinaapp.factory.factoryImpl.BovinoFactoryImpl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class CadastrarAnimaisActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCadastrarAnimaisBinding
+    private val bancoContextoCadastrarAnimais = CriarBancoDados(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,13 +27,11 @@ class CadastrarAnimaisActivity : AppCompatActivity() {
             val precoCompra = binding.idPrecoCompra.text.toString().toDouble()
             val pesoAtual = binding.idPesoAtual.text.toString().toDouble()
 
-            val db = BancoDados(this)
-
-            val factory = BovinoFactoryImpl(db)
+            val bovinoFactoryImpl = BovinoFactoryImpl(bancoContextoCadastrarAnimais)
 
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    factory.adicionarBovino(nomeBovino, dataCompra, precoCompra, pesoAtual)
+                    bovinoFactoryImpl.adicionarBovino(nomeBovino, dataCompra, precoCompra, pesoAtual)
                     runOnUiThread {
                         Toast.makeText(this@CadastrarAnimaisActivity, "Bovino adicionado com sucesso", Toast.LENGTH_SHORT).show()
                     }

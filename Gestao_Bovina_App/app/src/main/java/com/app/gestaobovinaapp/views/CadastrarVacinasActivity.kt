@@ -3,21 +3,21 @@ package com.app.gestaobovinaapp.views
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.app.gestaobovinaapp.database.BancoDados
+import com.app.gestaobovinaapp.database.CriarBancoDados
 import com.app.gestaobovinaapp.databinding.ActivityCadastrarVacinasBinding
-import com.app.gestaobovinaapp.factory.VacinaFactoryImpl
+import com.app.gestaobovinaapp.factory.factoryImpl.VacinaFactoryImpl
 
 class CadastrarVacinasActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCadastrarVacinasBinding
-    private lateinit var db: BancoDados
+    private lateinit var db: CriarBancoDados
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCadastrarVacinasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        db = BancoDados(this)
+        db = CriarBancoDados(this)
 
         binding.buttonSubmit.setOnClickListener {
             val nomeVacina = binding.editVaccineName.text.toString()
@@ -27,7 +27,7 @@ class CadastrarVacinasActivity : AppCompatActivity() {
             //val notas = binding.editNotes.text.toString()
             //val notas = 12.3
 
-            val db = BancoDados(this)
+            val db = CriarBancoDados(this)
             val vacina = VacinaFactoryImpl(db)
 
             if (nomeVacina.isNotEmpty() && numeroAnimal.isNotEmpty()) {

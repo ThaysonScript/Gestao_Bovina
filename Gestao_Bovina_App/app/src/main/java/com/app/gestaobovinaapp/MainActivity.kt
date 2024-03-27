@@ -8,6 +8,7 @@ import android.os.Environment
 import android.os.Handler
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.app.gestaobovinaapp.database.CriarBancoDados
 import com.app.gestaobovinaapp.databinding.ActivityMainBinding
 import com.app.gestaobovinaapp.views.HomeActivity
 import java.io.File
@@ -18,6 +19,7 @@ import java.io.IOException
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val banco = CriarBancoDados(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
